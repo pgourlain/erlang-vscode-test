@@ -15,7 +15,11 @@
 %%====================================================================
 
 start(_StartType, _StartArgs) ->
-    my_function(), 
+    try my_function() of
+        _ -> A = "~", A
+    catch
+        error:Reason:Stacktrace -> failed
+    end,
     erlvscode_sup:start_link().
 
 %%--------------------------------------------------------------------

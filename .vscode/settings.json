@@ -1,3 +1,6 @@
 {
-    "erlang.verbose": true
+    "erlang.verbose": true,
+    "search.exclude" : {
+        "**/_build": true
+    }
 }
